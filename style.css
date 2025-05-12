@@ -1,0 +1,67 @@
+ @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Slabo+27px&display=swap');
+ 
+*{
+ font-family: "Slabo 27px", serif;
+  font-weight: 800;
+  font-style: normal;
+}
+
+
+      #todo-container {
+        max-width: 600px;
+        margin: auto;
+        background: #ffffff;
+        border-radius: 15px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      #header h1 {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: #343a40;
+      }
+
+   
+
+      #todo-form button {
+        border-radius: 25px;
+        padding: 10px 20px;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+      }
+
+      #todo-form button:hover {
+        opacity: 0.9;
+      }
+
+      #input-button {
+        background-color: #537D5D;
+        color: white;
+        border: none;
+      }
+
+      #clear-button {
+        background-color: #E52020;
+        color: white;
+        border: none;
+      }
+
+
+   
+
+      .task-item:hover {
+        background: #e9ecef;
+      }
+
+      .task-item p {
+        margin: 0;
+        font-size: 1rem;
+        color: #495057;
+      }
+
+
+  
+
+      .task-item button:hover {
+        opacity: 0.9;
+      }
