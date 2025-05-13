@@ -30,11 +30,15 @@ p.style.color=" #b82132"
                 done.className = "btn btn-success mb-3 rounded-pill";
 
                 done.addEventListener("click", () => {
-                    p.style.textDecoration = "line-through";
-                    done.disabled = true;
+                    if (p.style.textDecoration === "line-through") {
+                        p.style.textDecoration = "none";
+                    } else {
+                        p.style.textDecoration = "line-through";
+                    }
                 });
 
  del.addEventListener("click", () => {
+          if (confirm("Are you sure you want to delete this task?")) {
         del.disabled = true
         fetch(
           `https://68220753b342dce8004ccfc9.mockapi.io/todo/${item.id}`,
@@ -47,6 +51,8 @@ p.style.color=" #b82132"
             console.log(data)
             div.remove()
           })
+
+    }
       })
 
                 buts.appendChild(done);
@@ -83,6 +89,12 @@ but.addEventListener("click", () => {
 
 
 butClear.addEventListener("click", () => {
+        if (inputBox.value.length === 0) {
+        alert("There are no tasks to delete.");
+        return;
+    }
+              if (confirm("Are you sure you want to delete all task?")) {
+
     fetch("https://68220753b342dce8004ccfc9.mockapi.io/todo ")
         .then((response) => response.json())
         .then((data) => {
@@ -99,7 +111,7 @@ butClear.addEventListener("click", () => {
                 loadTasks(); 
             });
         });
-});
+}});
 
 window.onload = () => {
     loadTasks();
